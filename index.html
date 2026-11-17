@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulateur CTA — Bloc opératoire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="logo">CTA</div>
+    <div><div class="t1">Simulateur de centrale de traitement d'air — Bloc opératoire</div><div class="t2">Laboratoire virtuel HVAC · SITB — Hôpital d'Enfants de Rabat · GST-RSK</div></div>
+    <div class="sp"></div>
+    <div class="modes" id="modes"></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+<main>
+  <section class="view" id="v-accueil"></section>
+
+  <section class="view" id="v-cta">
+    <div class="cta-wrap">
+      <div class="card complist" id="complist"></div>
+      <div>
+        <div id="cta3d">
+          <div class="toolbar3d">
+            <label class="row"><input type="checkbox" id="t_exp"> Vue éclatée (démontage)</label>
+            <label>Opacité du caisson<input type="range" id="t_cas" min="0" max="0.6" step="0.02" value="0.12"></label>
+            <label class="row"><input type="checkbox" id="t_rec"> Recyclage autorisé</label>
+            <button class="b sec" id="t_tour">▶ Visite guidée</button>
+            <button class="b sec" id="t_rst">Vue initiale</button>
+          </div>
+          <div class="legend"><div><i style="background:var(--an)"></i>Air neuf</div><div><i style="background:var(--mel)"></i>Air mélangé</div><div><i style="background:var(--tra)"></i>Air traité</div><div><i style="background:var(--sou)"></i>Air soufflé</div><div><i style="background:var(--rep)"></i>Air repris / recyclé</div><div><i style="background:var(--rej)"></i>Air rejeté</div></div>
+        </div>
+        <p class="small muted">Glisser : rotation · clic droit ou Maj + glisser : déplacement · molette / pincement : zoom · clic : fiche du composant. Les particules, les lames de registres, la roue du ventilateur et la couleur des filtres suivent la simulation (GTC / pannes).</p>
+      </div>
+      <div class="card sheet" id="sheet"><p class="muted">Cliquez sur un composant de la maquette ou de la liste.</p></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-bloc"></section>
+  <section class="view" id="v-psy"></section>
+  <section class="view" id="v-calculs"></section>
+  <section class="view" id="v-dim"></section>
+  <section class="view" id="v-gtc"></section>
+  <section class="view" id="v-pannes"></section>
+  <section class="view" id="v-normes"></section>
+  <section class="view" id="v-qcm"></section>
+</main>
+<footer>Outil pédagogique — les valeurs par défaut sont des hypothèses ; les exigences applicables sont celles du référentiel, du programme et des pièces du marché.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/physics.js"></script>
+<script src="js/data-components.js"></script>
+<script src="js/data-ref.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/psychro.js"></script>
+<script src="js/calc.js"></script>
+<script src="js/bloc.js"></script>
+<script src="js/cta3d.js"></script>
+<script src="js/gtc.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
